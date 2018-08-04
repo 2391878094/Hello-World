@@ -28,6 +28,7 @@ fig = plt.figure()
  
 
 def F(x):
+
     return  -3*(x-30) **2*np.sin(x)
 
  
