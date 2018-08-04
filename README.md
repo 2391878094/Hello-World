@@ -37,9 +37,7 @@ def F(x):
  
 
 class GA(object):
-
     #构建50个十五长度染色体（个体）的用0和1表示的基因型
-
     def __init__(self):
 
         self.populations = np.random.randint(0, 2, (population_size, DNA_length))
@@ -54,7 +52,6 @@ class GA(object):
 
  
    #计算适应度
-
     def calculate_fitness(self, loser_winner):
 
         DNA_value = self.DNA_decode(loser_winner)
@@ -67,7 +64,6 @@ class GA(object):
 
  
 #选择
-
     def selection(self):
 
         # 从0~DNA.length-1中随机选择2组DNA编号
@@ -98,7 +94,6 @@ class GA(object):
 
  
 #突变
-
     def mutation(self, loser_winner):
 
         for i in range(DNA_length):
@@ -109,7 +104,6 @@ class GA(object):
 
  
 #发展，即进行迭代
-
     def evolve(self):
 
         for i in range(int(population_size/2)):
@@ -133,9 +127,7 @@ plt.plot(population_value, F(population_value))
  
 
 ga = GA()
-
 #画出图像
-
 for step in range(n_generations):
 
     population_fitness = ga.calculate_fitness(ga.populations)
@@ -153,9 +145,7 @@ for step in range(n_generations):
 if 'sca' in globals():
 
      sca.remove()
-
 #描最大值点
-
 sca = plt.scatter(x, y_max, s=100, c='red')     #（位置，位置，圈的大小，颜色）
 
 print('the best fitness: %.3f,the best x: %.3f' % (y_max, x))
